@@ -9,7 +9,7 @@
 <body>
     <form id="product">
         <input type="text"  placeholder="Product name" id="name">
-        <input type="text" placeholder="Category" id="Category">
+        <input type="text" placeholder="Category" id="category">
         <input type="text" placeholder="Image url" id="image">
         <input type="number" placeholder="Price" id="price">
         <select name="Gender" id="gender">
@@ -24,38 +24,48 @@
 </body>
 </html>
 <script>
+
+    
+function Product(n,c,i,p,g,s){
+           this.name=n;
+           this.category=c;
+           this.price=p;
+           this.gender=g;
+           
+           this.img=i;
+           
+           this.sold=s;
+    }
     document.querySelector("form").addEventListener("submit",product);
-    let productArr=[];
+   
     
     function product(event){
         event.preventDefault();
        
-        let productObj={
-            name:document.getElementById("name").value,
-            catagory:document.getElementById("Category").value,
-            img:document.getElementById( "image").value,
-            price:document.getElementById("price").value,
-            gender:document.getElementById("gender").value,
-           
-        }
         
-        productArr.push(productObj);
-        localStorage.setItem("product",JSON.stringify(productArr))
-        let product= new Product (name,Category,image,price,gender,false)
+            name=document.querySelector("#name").value;
+            category=document.querySelector("#category").value;
+            img=document.querySelector( "#image").value;
+            price=document.querySelector("#price").value;
+            gender=document.querySelector("#gender").value;
+
+
+            let data=JSON.parse(localStorage.getItem("product"))||[];
+
+            let product= new Product (name,category,img,price,gender,false)
+     
+        
+          
+       
+        localStorage.setItem("product",JSON.stringify(data))
+       
+        data.push(product);
+        console.log(product);
     }
 
 
 
 
-     function Product(name,Category,image,price,gender,sold){
-           this.name=name;
-           this.price=price;
-           this.gender=gender;
-           
-           this.image=image;
-           this.Category=Category;
-           this.sold=sold
-    }
     
   
 
