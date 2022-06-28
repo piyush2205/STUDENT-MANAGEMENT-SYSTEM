@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         #member-1{
+            height: 80px;
+            width: 80px;
+            border: 1px solid;
+         }
+         #member-2{
+            height: 80px;
+            width: 80px;
+            border: 1px solid;
+         }
+         #member-3{
+            height: 80px;
+            width: 80px;
+            border: 1px solid;
+         }
+         #winner{
+            height: 80px;
+            width: 80px;
+            border: 1px solid;
+         }
+         
+    </style>
+</head>
+<body>
+    <div id="winner">Winner</div>
+    <div id="member-1">MemberA</div>
+    <div id="member-2">MemberB</div>
+    <div id="member-3">MemberC</div>
+    
+    <button id="roll">Roll The Dice</button>
+</body>
+</html>
+
+<script>
+document.querySelector("#roll").addEventListener("click",myFunction);
+
+function myFunction(){
+    event.preventDefault()
+    
+    // let div1=document.querySelector("#member-1")
+    
+      let div1=Math.floor(Math.random()*6)+1
+  
+   document.getElementById("member-1").innerHTML=div1
+   
+
+  
+    let  div2=Math.floor(Math.random()*6)+1
+   document.querySelector("#member-2").innerHTML=div2
+  
+    let  div3=Math.floor(Math.random()*6)+1
+   document.querySelector("#member-3").innerHTML=div3
+
+
+
+   if(div1>div2 && div1>div3){
+    
+    document.getElementById("member-1").style.background="green";
+    document.getElementById("winner").innerHTML=div1
+   
+    if(div2>div3){
+    document.getElementById("member-2").style.background="yellow"
+    document.getElementById("member-3").style.background="red"
+
+    }
+    else
+    {
+    document.getElementById("member-2").style.background="red"   
+    document.getElementById("member-3").style.background="yellow"   
+    
+    }
+
+    }
+
+
+
+    if(div2>div1 && div2>div3){
+    
+    document.getElementById("member-2").style.background="green";
+    document.getElementById("winner").innerHTML=div2
+    
+    if(div3>div1){
+    document.getElementById("member-3").style.background="yellow"
+    document.getElementById("member-1").style.background="red"
+
+    }
+    else
+    {
+    document.getElementById("member-3").style.background="red"   
+    document.getElementById("member-1").style.background="yellow"   
+    }
+   }
+    
+    if(div3>div2 && div3>div1){
+    
+    document.getElementById("member-3").style.background="green";
+    document.getElementById("winner").innerHTML=div3
+    
+    if(div1>div2){
+    document.getElementById("member-1").style.background="yellow"
+    document.getElementById("member-2").style.background="red"
+
+    }
+    else
+    {
+    document.getElementById("member-1").style.background="red"   
+    document.getElementById("member-2").style.background="yellow"   
+    }
+  }
+
+
+
+    if(div1==div2){
+        document.getElementById("member-1").style.background="blue"
+        document.getElementById("member-2").style.background="blue"
+      
+    }
+    else if(div2==div3){
+      document.getElementById("member-2").style.background="blue"
+      document.getElementById("member-3").style.background="blue"
+    }
+    else if(div1==div3){
+        document.getElementById("member-3").style.background="blue"
+        document.getElementById("member-1").style.background="blue"
+
+    }
+           
+  }
+
+  
+
+ 
+</script>
