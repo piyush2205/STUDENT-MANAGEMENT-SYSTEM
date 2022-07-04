@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>products</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(1,1fr);
+            gap: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+      <!-- apned code -->
+    </div>
+   
+
+   
+</body>
+</html>
+<script>
+function append(){
+    let data=JSON.parse(localStorage.getItem("product"))||[];
+    let index=0
+    // container.innerHTML=null;
+    data.forEach(function(el){
+     let div=document.createElement("div");
+    let image=document.createElement("img")
+        image.src=el.img
+        
+     let name=document.createElement("h2")
+         name.innerText=el.name
+       let category=document.createElement("p")
+       category.innerText=el.category 
+       let price=document.createElement("p")
+       price.innerText=el.price
+
+       let button=document.createElement("button")
+       button.innerText="Remove"
+       button.addEventListener("click", function(){
+       remove(index)
+       })
+       
+       
+       let sold=document.createElement("button")
+       sold.innerText="sold"
+       div.append(image,name,category,price,button,sold)
+       document.getElementById("container").append(div)
+       index++;
+})
+
+}
+append()
+function remove(index,e){
+    // e.parentNode.parentNode.removeChild(e.parentNode)
+    
+     let data=JSON.parse(localStorage.getItem("product"))||[];
+     let newData=data.filter(function(el,i){
+        if(i===index){
+            let trash=JSON.parse(localStorage.getItem("trash"))||[];
+            trash.push(el);
+           localStorage.setItem("trash",JSON.stringify(trash))
+        }else{
+            return i !==index;
+
+        }
+
+     });
+     localStorage.setItem("product",JSON.stringify(newData))
+     console.log(newData)
+      append();
+    // data.splice(index,1)
+    // localStorage.setItem("product",JSON.stringify(data));
+    // window.location.reload()
+
+}
+
+</script>

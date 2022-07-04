@@ -17,6 +17,7 @@
             <option >Female</option>
             <input type="submit"  id="add">
         </select>
+        <a href="products.html">product</a>
 
 
     </form>
@@ -54,12 +55,12 @@ function Product(n,c,i,p,g,s){
 
             let product= new Product (name,category,img,price,gender,false)
      
-        
+            data.push(product);
           
        
         localStorage.setItem("product",JSON.stringify(data))
        
-        data.push(product);
+       
         console.log(product);
     }
 

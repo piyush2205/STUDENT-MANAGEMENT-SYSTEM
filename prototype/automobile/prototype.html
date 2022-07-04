@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype</title>
+    
+
+</head>
+<body>
+    <h1>prototype</h1>
+</body>
+</html>
+<script>
+let autoMobile={
+    barnd:"tata",
+    engine:"4stroke",
+   
+
+}
+
+ let p1=Object.create(autoMobile)
+ p1.tyre="ceat"
+
+ let p2=Object.create(autoMobile)
+ p2.tyre="mrf"
+ console.log(p1,p2)
+</script>
