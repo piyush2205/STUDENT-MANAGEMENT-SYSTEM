@@ -33,8 +33,5 @@ function append(data){
        container.append(div)
     })
 }
-function myFunction(){
- if() 
 
-}
 
