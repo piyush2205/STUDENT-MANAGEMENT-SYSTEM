@@ -25,7 +25,7 @@ function append(data){
         let p=document.createElement("p")
         p.innerText=el.price
         let button=document.createElement("button")
-        button.addEventListener("click",myFunction)
+        
         button.innerText="add to cart"
 
         
