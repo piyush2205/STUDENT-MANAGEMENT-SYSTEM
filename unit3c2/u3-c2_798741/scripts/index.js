@@ -17,6 +17,7 @@ function append(data){
     let container=document.getElementById("groceries")
     data.forEach(function(el){
         let div=document.createElement("div")
+        div.setAttribute("class","item")
         
         let img=document.createElement("img")
         img.src=el.image;
@@ -25,6 +26,8 @@ function append(data){
         let p=document.createElement("p")
         p.innerText=el.price
         let button=document.createElement("button")
+         button.setAttribute("class","button")
+        
         
         button.innerText="add to cart"
 

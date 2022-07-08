@@ -37,6 +37,10 @@ localStorage.setItem("student",JSON.stringify(data))
 
 console.log(s1);
 }
+
+
+
+
 let obj={};
 function calculate(){
     let data=JSON.parse(localStorage.getItem("student"))||[];
@@ -57,13 +61,18 @@ function calculate(){
 }
     calculate()
 
-let a=document.querySelector("#batch18")
-a.innerText=`Ft-web18:${obj["ft-web:18"]}`
 
-let b=document.querySelector("#batch19")
-b.innerText=`Ft-web19:${obj["ft-web:19"]}`
+   function storeData(){
+    let a=document.querySelector("#batch18")
+    a.innerText=`Ft-web18:${obj["ft-web:18"]? obj["ft-web:18"] : 0}`
+    
+    let b=document.querySelector("#batch19")
+    b.innerText=`Ft-web19:${obj["ft-web:19"]? obj["ft-web:19"] : 0}`
+    
+    let c=document.querySelector("#batch20")
+    c.innerText=`Ft-web20:${obj["ft-web:20"]? obj["ft-web:20"] : 0}`
+    
+    console.log(obj["ft-web:19"])
+   }
 
-let c=document.querySelector("#batch20")
-c.innerText=`Ft-web20:${obj["ft-web:20"]}`
-
-console.log(obj["ft-web:19"])
+   storeData()

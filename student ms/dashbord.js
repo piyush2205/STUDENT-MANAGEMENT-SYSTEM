@@ -15,7 +15,7 @@ function append(){
        let button=document.createElement("button")
        button.innerText="Remove"
        button.addEventListener("click", function(){
-        remove(index)
+        remove(data,index)
        })       
        div.append(image,name,course,batch,button)
        document.getElementById("contanier").append(div)
@@ -25,13 +25,26 @@ function append(){
 
 append();
 
-function remove(index){
-    data.splice(index,1)
-  
-    localStorage.setItem("student",JSON.stringify(data))
-    window.location.reload()
 
+
+function remove(data,index){
+    data.splice(index,1)
+ 
+    localStorage.setItem("student",JSON.stringify(data))
+    
+   
+              let trash=JSON.parse(localStorage.getItem("trash"))||[];
+              trash.push(data);
+             localStorage.setItem("trash",JSON.stringify(trash))
+
+    
+     window.location.reload()
 }
+
+ 
+
+
+
 let obj={};
 function calculate(){
     let data=JSON.parse(localStorage.getItem("student"))||[];
@@ -52,13 +65,15 @@ function calculate(){
 }
     calculate()
 
+
+    
 let a=document.querySelector("#batch18")
-a.innerText=`Ft-web18:${obj["ft-web:18"]}`
+a.innerText=`Ft-web18:${obj["ft-web:18"] ? obj["ft-web:18"] : 0}`
 
 let b=document.querySelector("#batch19")
-b.innerText=`Ft-web19:${obj["ft-web:19"]}`
+b.innerText=`Ft-web19:${obj["ft-web:19"] ? obj["ft-web:19"] : 0}`
 
 let c=document.querySelector("#batch20")
-c.innerText=`Ft-web20:${obj["ft-web:20"]}`
+c.innerText=`Ft-web20:${obj["ft-web:20"] ? obj["ft-web:20"] : 0}`
 
 

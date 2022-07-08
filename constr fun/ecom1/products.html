@@ -7,6 +7,7 @@
     <title>products</title>
     <style>
         #container{
+           
             display: grid;
             grid-template-columns: repeat(3,1fr);
             grid-template-rows: repeat(1,1fr);
@@ -15,6 +16,9 @@
     </style>
 </head>
 <body>
+   <div id="counter">
+        
+   </div>
     <div id="container">
       <!-- apned code -->
     </div>
@@ -26,10 +30,16 @@
 <script>
 function append(){
     let data=JSON.parse(localStorage.getItem("product"))||[];
-    let index=0
-    // container.innerHTML=null;
-    data.forEach(function(el){
+        
+     let count=document.getElementById("counter")
+     count.innerHTML="Count:-"+data.length
+     count.style.backgroundColor="grey"
+     count.style.fontSize="50px"
+     container.innerHTML=null;
+    
+    data.forEach(function(el,index){
      let div=document.createElement("div");
+     
     let image=document.createElement("img")
         image.src=el.img
         
@@ -43,41 +53,66 @@ function append(){
        let button=document.createElement("button")
        button.innerText="Remove"
        button.addEventListener("click", function(){
-       remove(index)
+       remove(data,index)
        })
        
        
-       let sold=document.createElement("button")
-       sold.innerText="sold"
-       div.append(image,name,category,price,button,sold)
+       let soldbutton=document.createElement("button")
+       soldbutton.innerText="sold"
+      
+       if(!el.sold){
+            soldbutton.style.backgroundColor="red"
+        }else{
+            soldbutton.style.backgroundColor="green"
+        }
+
+       soldbutton.addEventListener("click", function(){
+    //    soldMyfunction()
+       if(el.sold===false){
+        el.sold=true
+        soldbutton.style.backgroundColor="green"
+       }else{
+        el.sold=false
+        soldbutton.style.backgroundColor="red"
+       }
+       })
+       
+       
+     
+       div.append(image,name,category,price,button,soldbutton)
        document.getElementById("container").append(div)
-       index++;
+      
+
 })
 
 }
-append()
-function remove(index,e){
-    // e.parentNode.parentNode.removeChild(e.parentNode)
+ append()
+
+
+
+     remove=(data,index)=>{
+        
+    data.splice(index,1)
+
+    localStorage.setItem("product",JSON.stringify(data));
     
-     let data=JSON.parse(localStorage.getItem("product"))||[];
-     let newData=data.filter(function(el,i){
-        if(i===index){
-            let trash=JSON.parse(localStorage.getItem("trash"))||[];
-            trash.push(el);
-           localStorage.setItem("trash",JSON.stringify(trash))
-        }else{
-            return i !==index;
+     window.location.reload()
+    }
+      
+    
+    
+   
 
-        }
 
-     });
-     localStorage.setItem("product",JSON.stringify(newData))
-     console.log(newData)
-      append();
-    // data.splice(index,1)
-    // localStorage.setItem("product",JSON.stringify(data));
-    // window.location.reload()
 
-}
+
+
+
+
+
+
+
+
+
 
 </script>
