@@ -51,6 +51,7 @@ d1.type="password"
  button.innerText="Submit"
  button.style.backgroundColor="#008080"
  button.style.color="white"
+
   button.addEventListener("click" ,()=>{
     storeData()
   })
@@ -70,7 +71,8 @@ function Data(n,c,e,p){
 
 function storeData(e){
  event.preventDefault();
-  
+
+
    let Name= document.querySelector(".name").value;
    let Contact= document.querySelector(".contact").value;
     
@@ -84,12 +86,12 @@ function storeData(e){
 
    let signupdata=JSON.parse(localStorage.getItem("Signupdata"))||[];
 
-   signupdata.push(s1);
+    signupdata.push(s1);
   
-   localStorage.setItem("Signupdata",JSON.stringify(signupdata))
+    localStorage.setItem("Signupdata",JSON.stringify(signupdata))
    
    
-   
+  
   //  console.log(s1);
 
   //  console.log(signupdata);
@@ -97,21 +99,25 @@ function storeData(e){
 
 }
 
-// if(checkemails(signupdata.email)===true){
+
+
+
+// if(checkemails(this.Data.email)===true){
 //   signupdata.push(s1);
-//   localStorage.setItem("Signupdata",JSON.stringify(signupdata))
-//  }else{
-//   alert("account alredy exits")
-//  }
+//  localStorage.setItem("Signupdata",JSON.stringify(signupdata))
+// }else{
+//  alert("account alredy exits")
+// }
+
 // function checkemails(email){
-//   let filtered=signupdata.filter(function(e){
-//     return email===e.email
-//   })
-//   if(filtered.length>0){
-//     return false;
+//  let filtered=signupdata.filter(function(e){
+//    return email===e.email
+//  })
+//  if(filtered.length>0){
+//    return false;
 
-//   }else{
-//     return true;
+//  }else{
+//    return true;
 
-//   }
+//  }
 // }

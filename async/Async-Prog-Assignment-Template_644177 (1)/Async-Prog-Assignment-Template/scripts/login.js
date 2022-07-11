@@ -84,13 +84,4 @@ localStorage.setItem("Logindata",JSON.stringify(logindata))
 
 }
 
-for(i=0;i<data.length;i++){
-    if(data.email==localStorage.getItem("signupdata").email && localStorage.getItem("Logindata").pass==localStorage.getItem("Lignupdata").pass){
-        let b= document.querySelector("#index")
-         b.href="index.html"
-     }else{
-         alert("invalid Credentials’")
-     }
-      
-      
-}
+
