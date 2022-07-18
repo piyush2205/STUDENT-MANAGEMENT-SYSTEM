@@ -21,12 +21,15 @@ function myfood(){
                 Foodname6:foodname6,
     }
 console.log(foodObj)
-    // let b1=document.createElement("a")
-    // b1.href="food.html"
-    // // let Image=document.createElement("img")
-    // // Image.src="https://cdn.dribbble.com/users/2298909/screenshots/6715549/your-food-is-being-prepared_2x.gif"
-    // // foodform.append()
-}
+//////////////////////////////////////////////////////////////////
+
+  
+
+//     //////////////////////////////
+//      let Image=document.createElement("img")
+//      Image.src="https://cdn.dribbble.com/users/2298909/screenshots/6715549/your-food-is-being-prepared_2x.gif"
+//      foodform.append(Image)
+ }
 
 
 // let orderfood_promise= new Promise((resolve, reject) => {

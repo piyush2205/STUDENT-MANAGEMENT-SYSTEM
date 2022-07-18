@@ -5,20 +5,104 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #navbar{
+            text-align: center;
+            background-color:royalblue;
+            
+        }
+        #foodform{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(3,1fr); 
+            /* display: flex;
+            border: 1px solid;
+            /* margin: auto;
+            width: 98%; */
+        }
+        .classdiv{
+            /* display: flex; */
+            /* border:  1px solid; */
+             margin: auto; 
+            
+        }
+        #orderfood{
+            margin: auto;
+            
+            font-size: 50px;
+        
+        }
+        a{
+           color: black;
+            text-decoration: none;
+        }
+       h3{
+        text-align: center;
+       }
+        
+    </style>
 </head>
 <body>
+    <div id="navbar">
+        <h1>VIRTUAL MCDONALD'S</h1>
+    </div>
+
     <form id="foodform">
 
-        <button id="orderfood" >Order-food</button>
-        <input  id="king-size-burger" type="checkbox" value="king-size burger">king-size burger
-        <input  id="coke" type="checkbox" value="coke">coke
-        <input  id="veg-burger" type="checkbox" value="veg-burger">veg-burger
-        <input  id="pizaa" type="checkbox" value="pizaa">pizaa
-        <input  id="non-veg-burger" type="checkbox" value="non-veg burger">non-veg burger
-        <input  id="paneer-burger-coke" type="checkbox" value="paneer-burger+coke">paneer-burger+coke
+        
+        
+       <div  class="classdiv">
+        <img src="https://th.bing.com/th/id/OIP.euNM4HcXhF9mZMlPV8TfiAHaE7?w=282&h=188&c=7&r=0&o=5&dpr=1.25&pid=1.7" alt="">
+        <h3><input  id="king-size-burger" type="checkbox" value="king-size burger">king-size burger</h3>
+        
+      </div>     
+        <div class="classdiv" >
+            <img src="https://th.bing.com/th/id/OIP.2kpf11yfKNjD177n46UynQHaHa?w=184&h=184&c=7&r=0&o=5&dpr=1.25&pid=1.7" alt="">
+           <h3>
+            <input  id="coke" type="checkbox" value="coke" >coke
+           </h3>
+        
+        </div  .class="classdiv">
+        <div class="classdiv">
+            <img src="https://th.bing.com/th/id/OIP.SkVlb1mIZTT3Ir_R7io1FAHaE7?w=260&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7" alt="">
+            <h3>
+                <input  id="veg-burger" type="checkbox" value="veg-burger">veg-burger
+            </h3>
+          
+           
+        </div >
+        
+        <div class="classdiv">
+            <img src="https://th.bing.com/th/id/OIP.8h3FKUS1farNs-FLEYMgCQHaE8?w=263&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7" alt="">
+            <h3>
+                <input  id="pizaa" type="checkbox" value="pizaa">pizaa
+            </h3>
+           
+          
+        </div>
+        
+        <div class="classdiv">
+            <img src="https://th.bing.com/th/id/OIP.AeOnOH-st6h8ein3Z37ZkQHaE7?w=254&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7" alt="">
+            <h3>
+                <input  id="non-veg-burger" type="checkbox" value="non-veg burger">non-veg burger
+            </h3>
+          
+           
+        </div>
 
+       <div class="classdiv">
+        
+        <img src="https://th.bing.com/th/id/OIP.anaAWhcRqCf6EV9Y8b-fXwHaDt?w=324&h=175&c=7&r=0&o=5&dpr=1.25&pid=1.7" alt="">
+        <h3>
+            <input  id="paneer-burger-coke" type="checkbox" value="paneer-burger+coke">paneer-burger+coke
+        </h3>
+       
+       </div>
+       <button id="orderfood" ><a href="food.html">Order-food</a></button>
+       
+       
     </form>
-    
+   
    
 </body>
 </html>

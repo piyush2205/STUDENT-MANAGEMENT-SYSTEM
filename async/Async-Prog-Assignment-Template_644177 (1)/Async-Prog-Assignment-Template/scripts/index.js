@@ -82,7 +82,7 @@ function slideshow(){
 let images=JSON.parse(localStorage.getItem("images"))
 let slide=document.getElementById("slide");
 
-
+ clearInterval(id);
 id= setInterval(function(){
     if(i===images.length){
         i=0;
@@ -236,9 +236,10 @@ let moviesDataLS=JSON.parse(localStorage.getItem("moviesdata"))||[];
 
 MoviesData(moviesData)
 function MoviesData(moviesData){
+    document.querySelector("#movies").innerHTML=" "
     moviesData.forEach(el => {
         // console.log(el)
-        //  document.querySelector("#movies").innerHTML=" "
+        //
         
         let movie=document.querySelector("#movies")
         let box=document.createElement("div")

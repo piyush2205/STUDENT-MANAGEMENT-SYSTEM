@@ -5,9 +5,79 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>phone pe</title>
+    <style>
+        #navbar{
+            border: 1px solid;
+            border-radius:1px ;
+            display: flex;
+            background-color: antiquewhite;
+        }
+        img{
+            border-radius: 50px;
+            height: 50px;
+            margin-top: 5px;
+            margin-left: 5px;
+            margin-bottom: 5px;
+        }
+        h1{
+            margin: auto;
+        }
+        a{
+            text-decoration: none;
+            font-size: 30px;
+            color:crimson;
+            margin-right: 10px;
+            margin-top: 10px;
+            margin-left: 5px;
+            margin-bottom: 5px;
+        }
+        #container{
+           /* border: 1px solid; */
+           height: 500px;
+           width: 500px;
+           margin: auto;
+           margin-top: 50px;
+        }
+        #imgphonepe{
+            height: 400px;
+            width: 500px;
+
+        }
+        input{
+            display: block;
+            margin: auto;
+            height: 20px;
+            
+            
+        }
+        button{
+            display: block;
+            margin: auto;
+            height: 50px;
+            width: 100px;
+            color: red;
+            background-color: black;
+            border-radius: 10px;
+        }
+        
+    </style>
 </head>
 <body>
+    <div id="navbar">
+         <img src="https://th.bing.com/th/id/OIP.F_ErCaunr4VRuMuUy39HtAHaGT?w=186&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7" alt="">
+         <h1>PhonePe App</h1>
+         <a href="">SIGNUP</a>
+         <a href="">LOGIN</a>
+    </div>
     
+    <div id="container">
+             <img id="imgphonepe"
+             src="https://th.bing.com/th/id/R.3acdc30c67120b7604d4e4e4714c081b?rik=MpQZTI5gf9mNRQ&riu=http%3a%2f%2floanmature.com%2fwp-content%2fuploads%2f2021%2f06%2fPhonepay-768x432.jpg&ehk=OvNftHmE64GhQiIr3MzpYGp2N4o4OsSosVA%2bZ1d%2bWbY%3d&risl=&pid=ImgRaw&r=0" alt="">
+             <input type="number" placeholder="Number"><br>
+             <input type="number" placeholder="Amount"><br>
+             <button id="button">Pay Now</button>
+    </div>
+
 </body>
 </html>
 <script src="index.js"></script>

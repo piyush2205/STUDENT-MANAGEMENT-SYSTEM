@@ -19,7 +19,7 @@ navdiv.append(a,b,c)
 nav.append(navdiv)
 //navbar-------------------
 
-
+//////////////////////////////////////////////////////////////////////////////////////////////
 //signup
 document.querySelector("form").setAttribute("id","form")
 
@@ -59,9 +59,9 @@ d1.type="password"
 document.querySelector("form").append(h1,a1,br,b1,br2,c1,br3,d1,br4,button)
 //signup
 
-
+////////////////////////////////////////////////////////////////////////////////////////////
 //signupfuntion
-function Data(n,c,e,p){
+function signData(n,c,e,p){
   this.name=n;
   this.contact=c;
   this.email=e;
@@ -81,7 +81,7 @@ function storeData(e){
    let Pass= document.querySelector(".password").value;
    
 
-   let s1= new Data (Name,Contact,Email,Pass)
+   let s1= new signData (Name,Contact,Email,Pass)
 
 
    let signupdata=JSON.parse(localStorage.getItem("Signupdata"))||[];
@@ -91,33 +91,35 @@ function storeData(e){
     localStorage.setItem("Signupdata",JSON.stringify(signupdata))
    
    
-  
-  //  console.log(s1);
-
-  //  console.log(signupdata);
-
-
-}
-
-
-
-
-// if(checkemails(this.Data.email)===true){
+//   if(checkemails(s1.email)===true){
 //   signupdata.push(s1);
 //  localStorage.setItem("Signupdata",JSON.stringify(signupdata))
 // }else{
 //  alert("account alredy exits")
 // }
 
+    console.log(s1.email);
+
+  //  console.log(signupdata);
+
+   
+}
+
+
+
+
+
+
+
 // function checkemails(email){
-//  let filtered=signupdata.filter(function(e){
-//    return email===e.email
-//  })
-//  if(filtered.length>0){
-//    return false;
-
-//  }else{
-//    return true;
-
+//   let filtered=s1.filter(function(el){
+//     return email===el.email
+//   })
+//   if(filtered.length>0){
+//     return false;
+ 
+//   }else{
+//     return true;
+ 
+//   }
 //  }
-// }
