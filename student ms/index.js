@@ -62,7 +62,7 @@ function calculate(){
     calculate()
 
 
-   function storeData(){
+   function storeData1(){
     let a=document.querySelector("#batch18")
     a.innerText=`Ft-web18:${obj["ft-web:18"]? obj["ft-web:18"] : 0}`
     
@@ -75,4 +75,4 @@ function calculate(){
     console.log(obj["ft-web:19"])
    }
 
-   storeData()
+   storeData1()
